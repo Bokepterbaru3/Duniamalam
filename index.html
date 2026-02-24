@@ -150,7 +150,59 @@
 <link rel="me" href="https://draft.blogger.com/profile/14947335568264948220" />
 <meta name='google-adsense-platform-account' content='ca-host-pub-1556223355139109'/>
 <meta name='google-adsense-platform-domain' content='blogspot.com'/>
+  
+  <style>
+    /* CSS tombol animasi */
+    .btn.animated-btn {
+      display: inline-block;
+      background: linear-gradient(45deg, #0088cc, #00c6ff);
+      color: #fff;
+      font-weight: bold;
+      padding: 12px 28px;
+      border-radius: 50px;
+      text-decoration: none;
+      font-size: 14px;
+      box-shadow: 0 6px 20px rgba(0,136,204,0.5);
+      transition: all 0.3s ease;
+      position: relative;
+      animation: float 3s ease-in-out infinite;
+      margin-bottom: 12px;
+    }
+
+    .btn.animated-btn:hover {
+      transform: scale(1.1);
+      box-shadow: 0 10px 25px rgba(0,136,204,0.7);
+    }
+
+    @keyframes float {
+      0% { transform: translateY(0px); }
+      50% { transform: translateY(-8px); }
+      100% { transform: translateY(0px); }
+    }
+
+    .btn.animated-btn::after {
+      content: "";
+      position: absolute;
+      top: -6px; left: -6px; right: -6px; bottom: -6px;
+      border-radius: 50px;
+      background: linear-gradient(90deg, rgba(0,136,204,0.6), rgba(0,198,255,0.6));
+      filter: blur(10px);
+      opacity: 0.7;
+      z-index: -1;
+      animation: glowPulse 2.5s infinite alternate;
+    }
+
+    @keyframes glowPulse {
+      0% { opacity: 0.6; }
+      50% { opacity: 0.9; }
+      100% { opacity: 0.6; }
+    }
+  </style>
 </head>
+
+</head>
+
+  
 
 <body>
 
