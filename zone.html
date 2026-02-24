@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Premium Access</title>
+
+<style>
+body{
+  margin:0;
+  font-family: Arial, sans-serif;
+  background:url('https://picsum.photos/800/1200?blur=2') no-repeat center center fixed;
+  background-size:cover;
+}
+
+.overlay{
+  background:rgba(0,0,0,0.75);
+  min-height:100vh;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  padding:20px;
+}
+
+.card{
+  width:100%;
+  max-width:420px;
+  text-align:center;
+  color:white;
+}
+
+.profile img{
+  width:140px;
+  height:140px;
+  border-radius:50%;
+  border:4px solid white;
+  object-fit:cover;
+}
+
+h2{
+  margin:15px 0 5px;
+}
+
+.subtitle{
+  color:#ddd;
+  font-size:14px;
+  margin-bottom:20px;
+}
+
+.btn{
+  display:block;
+  margin:12px 0;
+  padding:14px;
+  border-radius:30px;
+  font-weight:bold;
+  text-decoration:none;
+  color:white;
+  font-size:15px;
+}
+
+.red{background:linear-gradient(45deg,#ff3b3b,#cc0000);}
+.purple{background:linear-gradient(45deg,#7b2ff7,#f107a3);}
+.orange{background:linear-gradient(45deg,#ff7a18,#ff3c00);}
+.blue{background:linear-gradient(45deg,#0072ff,#00c6ff);}
+
+.btn:hover{
+  opacity:0.9;
+}
+</style>
+</head>
+
+<body>
+
+<div class="overlay">
+  <div class="card">
+
+    <div class="profile">
+      <img src="https://i.pravatar.cc/300?img=12">
+    </div>
+
+    <h2>NAMA VERIFIED ✔</h2>
+    <div class="urgent-box">
+🚨 AKSES TERBATAS HARI INI
+    </div>
+    <div class="subtitle">
+      Hi, Saya Admin 😊<br>
+      Yang mau full videonya klik salah satu tombol di bawah
+      <div class="viewer-box">
+  🔥 Sedang Online: <span id="viewerCount"></span> orang
+        <div class="countdown">
+⏳ Promo Berakhir Dalam: <span id="timer">02:00</span>
+</div>
+
+<div class="progress-bar">
+  <div class="progress-fill" id="progressFill"></div>
+</div>
+      </div>
+    </div>
+
+    <!-- SEMUA MENUJU SMARTLINK KAMU -->
+    <a href="https://omg10.com/4/8758061" target="_blank" class="btn red">
+      💬 CHAT AKU DISINI
+    </a>
+
+    <a href="https://omg10.com/4/8758061" target="_blank" class="btn purple">
+      💎 Tonton Dengan Bayar Rp1110
+    </a>
+
+    <a href="https://omg10.com/4/8758061" target="_blank" class="btn orange">
+      📸 Masuk Instagram Premium
+    </a>
+
+    <a href="https://omg10.com/4/8758061" target="_blank" class="btn blue">
+      📘 Masuk Facebook Premium
+    </a>
+
+  </div>
+</div>
+<style>
+@keyframes pulse {
+  0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(255,0,0,0.7); }
+  70% { transform: scale(1.05); box-shadow: 0 0 0 10px rgba(255,0,0,0); }
+  100% { transform: scale(1); }
+}
+
+.btn {
+  animation: pulse 2s infinite;
+  transition: 0.3s;
+}
+
+.btn:hover {
+  transform: scale(1.08);
+}
+
+.live-box{
+  margin:15px 0;
+  font-size:14px;
+  color:#00ff88;
+  font-weight:bold;
+  animation: blink 1.5s infinite;
+}
+
+@keyframes blink{
+  0%,100%{opacity:1;}
+  50%{opacity:0.4;}
+}
+</style>
+  <style>
+.viewer-box{
+  margin:15px 0;
+  font-size:15px;
+  font-weight:bold;
+  color:#00ffcc;
+  animation: fade 2s infinite;
+}
+
+@keyframes fade{
+  0%,100%{opacity:1;}
+  50%{opacity:0.6;}
+}
+  </style>
+  <script>
+let viewers = Math.floor(Math.random() * 50) + 180; // awal 180-230
+const viewerElement = document.getElementById("viewerCount");
+
+function updateViewerSmooth(){
+  // naik atau turun 1-3 orang
+  let change = Math.floor(Math.random() * 3) + 1;
+  let direction = Math.random() > 0.5 ? 1 : -1;
+
+  viewers += change * direction;
+
+  // batas aman
+  if(viewers < 150) viewers = 150;
+  if(viewers > 350) viewers = 350;
+
+  viewerElement.innerText = viewers;
+
+  // kadang muncul notif join
+  if(Math.random() > 0.6){
+    showJoinNotif();
+  }
+}
+
+function showJoinNotif(){
+  const notif = document.createElement("div");
+  notif.className = "joinNotif";
+  notif.innerText = "+1 user joined";
+  document.body.appendChild(notif);
+
+  setTimeout(()=>{
+    notif.remove();
+  },2000);
+}
+
+// update tiap 3 detik
+setInterval(updateViewerSmooth, 3000);
+
+// tampil pertama kali
+viewerElement.innerText = viewers;
+    </script>
+  
+  <style>
+.viewer-box{
+  margin:15px 0;
+  font-size:15px;
+  font-weight:bold;
+  color:#00ffcc;
+}
+
+.joinNotif{
+  position:fixed;
+  bottom:20px;
+  left:50%;
+  transform:translateX(-50%);
+  background:rgba(0,0,0,0.8);
+  color:#00ff88;
+  padding:10px 18px;
+  border-radius:20px;
+  font-size:13px;
+  animation:fadeUp 2s ease;
+}
+
+@keyframes fadeUp{
+  0%{opacity:0; transform:translate(-50%,20px);}
+  30%{opacity:1;}
+  100%{opacity:0; transform:translate(-50%,-10px);}
+}
+  </style>
+  <style>
+.urgent-box{
+  background:linear-gradient(45deg,#ff0000,#ff6600);
+  padding:8px;
+  border-radius:20px;
+  font-size:13px;
+  font-weight:bold;
+  margin:10px 0;
+  animation:pulseUrgent 1.5s infinite;
+}
+
+@keyframes pulseUrgent{
+  0%,100%{opacity:1;}
+  50%{opacity:0.6;}
+}
+
+.countdown{
+  margin-top:10px;
+  font-weight:bold;
+  color:#ffcc00;
+}
+
+.progress-bar{
+  width:100%;
+  height:8px;
+  background:#333;
+  border-radius:10px;
+  margin:8px 0 15px;
+  overflow:hidden;
+}
+
+.progress-fill{
+  height:100%;
+  width:80%;
+  background:linear-gradient(90deg,#ff0000,#ff9900);
+  animation:progressMove 2s infinite alternate;
+}
+
+@keyframes progressMove{
+  from{width:75%;}
+  to{width:95%;}
+}
+
+/* Tombol Glow */
+.btn{
+  position:relative;
+  overflow:hidden;
+}
+
+.btn::after{
+  content:"";
+  position:absolute;
+  top:0;
+  left:-100%;
+  width:100%;
+  height:100%;
+  background:linear-gradient(120deg,transparent,rgba(255,255,255,0.6),transparent);
+  transition:0.5s;
+}
+
+.btn:hover::after{
+  left:100%;
+}
+
+/* Shake tiap 4 detik */
+@keyframes shake{
+  0%,100%{transform:translateX(0);}
+  25%{transform:translateX(-3px);}
+  75%{transform:translateX(3px);}
+}
+
+.btn{
+  animation:shake 4s infinite;
+}
+  </style>
+  <script>
+let time = 120; // 2 menit
+const timerElement = document.getElementById("timer");
+
+function updateTimer(){
+  let minutes = Math.floor(time / 60);
+  let seconds = time % 60;
+  timerElement.innerText =
+    (minutes < 10 ? "0" : "") + minutes + ":" +
+    (seconds < 10 ? "0" : "") + seconds;
+
+  if(time > 0){
+    time--;
+  }
+}
+
+setInterval(updateTimer, 1000);
+updateTimer();
+  </script>
+  <div class="floating-chat" onclick="openLink()">
+  💬 3 Pesan Baru
+  </div>
+  <style>
+.floating-chat{
+  position:fixed;
+  bottom:25px;
+  right:20px;
+  background:linear-gradient(45deg,#ff0066,#ff9900);
+  color:white;
+  padding:12px 18px;
+  border-radius:30px;
+  font-size:14px;
+  font-weight:bold;
+  box-shadow:0 5px 15px rgba(0,0,0,0.4);
+  cursor:pointer;
+  animation:floatChat 2s ease-in-out infinite;
+  z-index:9999;
+}
+
+@keyframes floatChat{
+  0%,100%{transform:translateY(0);}
+  50%{transform:translateY(-8px);}
+}
+  </style>
+  <script>
+// Smartlink kamu
+function openLink(){
+  if(navigator.vibrate){
+    navigator.vibrate(100); // getar 100ms
+  }
+  window.open("https://omg10.com/4/8758061", "_blank");
+}
+
+// Bubble text berubah random
+const chatBubble = document.querySelector(".floating-chat");
+const messages = [
+  "💬 1 Pesan Baru",
+  "💬 2 Pesan Baru",
+  "💬 3 Pesan Baru",
+  "💬 Admin Sedang Online",
+  "💬 Balasan Cepat Aktif"
+];
+
+function updateBubble(){
+  let randomMsg = messages[Math.floor(Math.random() * messages.length)];
+  chatBubble.innerText = randomMsg;
+}
+
+setInterval(updateBubble, 4000);
+  </script>
+</body>
+  
+  </html>
