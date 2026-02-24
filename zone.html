@@ -79,17 +79,17 @@ h2{
     </div>
 
     <h2>NAMA VERIFIED ✔</h2>
-    <div class="urgent-box">
-🚨 AKSES TERBATAS HARI INI
-    </div>
     <div class="subtitle">
       Hi, Saya Admin 😊<br>
       Yang mau full videonya klik salah satu tombol di bawah
+      <div class="urgent-box">
+🚨 AKSES TERBATAS HARI INI
+      </div>
       <div class="viewer-box">
   🔥 Sedang Online: <span id="viewerCount"></span> orang
-        <div class="countdown">
-⏳ Promo Berakhir Dalam: <span id="timer">02:00</span>
-</div>
+        <p id="promoTimer" class="promo-text">
+  ⏳ Promo berakhir dalam: <span id="countdown"></span>
+        </p>
 
 <div class="progress-bar">
   <div class="progress-fill" id="progressFill"></div>
@@ -301,7 +301,47 @@ viewerElement.innerText = viewers;
 .btn{
   animation:shake 4s infinite;
 }
+    .promo-text {
+  margin-top: 8px;
+  font-size: 14px;
+  color: #ff0000;
+  text-align: center;
+  font-weight: bold;
+  animation: blink 1s infinite;
+}
+
+@keyframes blink {
+  0% { opacity: 1; }
+  50% { opacity: 0.4; }
+  100% { opacity: 1; }
+}
   </style>
+  <script>
+const endDate = new Date().getTime() + (5 * 60 * 1000); // 5 menit
+
+const timer = setInterval(function() {
+  const now = new Date().getTime();
+  const distance = endDate - now;
+
+  const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+  const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+  document.getElementById("countdown").innerHTML =
+    minutes + "m " + seconds + "d";
+
+  if (distance < 0) {
+    clearInterval(timer);
+    document.getElementById("promoTimer").innerHTML = "❌ Promo telah berakhir";
+
+    // Disable semua tombol
+    const buttons = document.querySelectorAll("button");
+    buttons.forEach(btn => {
+      btn.disabled = true;
+      btn.style.opacity = "0.5";
+    });
+  }
+}, 1000);
+  </script>
   <script>
 let time = 120; // 2 menit
 const timerElement = document.getElementById("timer");
