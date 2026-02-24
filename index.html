@@ -1,0 +1,496 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>DUNIA MALAM</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="https://blogger.googleusercontent.com/img/a/AVvXsEgjLhhZQNRMFCk_jHlEs0ax0wu7s-EJbK8JAsDivS7fIDYtR11bqywu7AyB1pEfGqFgl8Mivs7xqvS8uMND6erMB1k8IPPoxXuswtn1Vzjhazgfj0PpUwFuEZkbEIFojGtCB35iL1CeIL5mHD3iKN6J54DRePSS4H7_-HWq1Ak2XvS3tZzABwC31utzE2RN" />  
+  
+  <!-- Google Translate Auto -->
+<div id="google_translate_element" style="display:none;"></div>
+<script type="text/javascript">
+  function googleTranslateElementInit() {
+    new google.translate.TranslateElement(
+      { pageLanguage: 'id', autoDisplay: false },
+      'google_translate_element'
+    );
+  }
+
+  // Mapping Country -> Language
+  const countryToLang = {
+    "ID":"id","US":"en","GB":"en","AU":"en","CA":"en","IN":"hi","PK":"ur","BD":"bn",
+    "MY":"ms","SG":"ms","PH":"tl","TH":"th","VN":"vi","LA":"lo","KH":"km",
+    "JP":"ja","KR":"ko","CN":"zh-CN","TW":"zh-TW","HK":"zh-TW",
+    "RU":"ru","UA":"uk","KZ":"kk","UZ":"uz",
+    "SA":"ar","AE":"ar","IQ":"ar","EG":"ar","YE":"ar","SY":"ar","JO":"ar","KW":"ar","QA":"ar","OM":"ar","BH":"ar","DZ":"ar","MA":"ar","TN":"ar","LY":"ar","SD":"ar",
+    "TR":"tr","IR":"fa","IL":"he",
+    "ES":"es","MX":"es","AR":"es","CL":"es","CO":"es","PE":"es","VE":"es","EC":"es","BO":"es","PY":"es","UY":"es","CU":"es","DO":"es","GT":"es","HN":"es","NI":"es","SV":"es","CR":"es","PA":"es",
+    "PT":"pt","BR":"pt",
+    "FR":"fr","BE":"fr","CH":"fr","LU":"fr","MC":"fr","CA":"fr",
+    "DE":"de","AT":"de","CH":"de","LI":"de",
+    "IT":"it","SM":"it","VA":"it",
+    "NL":"nl","BE":"nl","SR":"nl",
+    "SE":"sv","NO":"no","DK":"da","FI":"fi","IS":"is",
+    "PL":"pl","CZ":"cs","SK":"sk","SI":"sl","HR":"hr","RS":"sr","BA":"bs","ME":"sr","MK":"mk","BG":"bg","RO":"ro","HU":"hu","LT":"lt","LV":"lv","EE":"et",
+    "GR":"el","AL":"sq","AM":"hy","GE":"ka","AZ":"az"
+  };
+
+  // Auto translate by IP
+  function autoTranslateByIP() {
+    fetch("https://ipapi.co/json/")
+      .then(res => res.json())
+      .then(data => {
+        let userLang = countryToLang[data.country_code] || "en";
+        document.cookie = `googtrans=/id/${userLang}; path=/`;
+        location.reload();
+      });
+  }
+
+  autoTranslateByIP();
+</script>
+<script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+  <!-- Meta & Identity -->
+  <link rel="me" href="https://www.blogger.com/profile/15965148592935480742" />
+  <meta name="google-adsense-platform-account" content="ca-host-pub-1556223355139109" />
+  <meta name="google-adsense-platform-domain" content="blogspot.com" />
+
+  <!-- Styles -->
+  <style>
+    body, html {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      height: 100%;
+    }
+
+    .animated-background {
+      animation: moveBackground 60s linear infinite;
+      background-image: url('https://blogger.googleusercontent.com/img/a/AVvXsEgjLhhZQNRMFCk_jHlEs0ax0wu7s-EJbK8JAsDivS7fIDYtR11bqywu7AyB1pEfGqFgl8Mivs7xqvS8uMND6erMB1k8IPPoxXuswtn1Vzjhazgfj0PpUwFuEZkbEIFojGtCB35iL1CeIL5mHD3iKN6J54DRePSS4H7_-HWq1Ak2XvS3tZzABwC31utzE2RN');
+      background-size: cover;
+      background-repeat: repeat;
+      background-position: 0 0;
+      padding: 40px 20px;
+      color: white;
+      min-height: 100vh;
+      text-shadow: 1px 1px 3px #000;
+    }
+
+    @keyframes moveBackground {
+      0% { background-position: 0% 0%; }
+      100% { background-position: 100% 0%; }
+    }
+
+    /* Efek hover semua elemen penting */
+    img:hover,
+    video:hover,
+    .play-icon:hover,
+    .tooltip:hover,
+    a:hover div {
+      transform: scale(1.05);
+      transition: transform 0.3s ease;
+    }
+
+    .play-icon { animation: pulse-glow 2s infinite; }
+
+    @keyframes pulse-glow {
+      0% { box-shadow: 0 0 15px rgba(255, 75, 43, 0.4), 0 0 5px rgba(255, 65, 108, 0.3); }
+      50% { box-shadow: 0 0 30px rgba(255, 75, 43, 0.8), 0 0 15px rgba(255, 65, 108, 0.5); }
+      100% { box-shadow: 0 0 15px rgba(255, 75, 43, 0.4), 0 0 5px rgba(255, 65, 108, 0.3); }
+    }
+
+    .tooltip { transition: transform 0.3s ease; }
+    a div { transition: transform 0.3s ease; }
+    video { transition: transform 0.3s ease; }
+
+    .tooltip .tooltiptext {
+      visibility: hidden;
+      width: 80px;
+      background-color: #333;
+      color: #fff;
+      text-align: center;
+      padding: 4px 8px;
+      border-radius: 6px;
+      position: absolute;
+      z-index: 1;
+      bottom: -30px;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 12px;
+      opacity: 0;
+      transition: opacity 0.3s;
+    }
+
+    .tooltip:hover .tooltiptext { visibility: visible; opacity: 1; }
+
+    @media (max-width: 480px) {
+      .play-icon { font-size: 36px !important; width: 56px !important; height: 56px !important; }
+      #videoElement { height: 250px !important; object-fit: cover; }
+      h2 { font-size: 20px !important; }
+      h3 { font-size: 18px !important; }
+      p { font-size: 14px !important; }
+      a div { font-size: 16px !important; }
+    }
+  </style>
+<link rel="me" href="https://www.blogger.com/profile/03077442830062457787" />
+<meta name='google-adsense-platform-account' content='ca-host-pub-1556223355139109'/>
+<meta name='google-adsense-platform-domain' content='blogspot.com'/>
+<link rel="me" href="https://www.blogger.com/profile/09332681439165078643" />
+<meta name='google-adsense-platform-account' content='ca-host-pub-1556223355139109'/>
+<meta name='google-adsense-platform-domain' content='blogspot.com'/>
+<link rel="me" href="https://www.blogger.com/profile/14947335568264948220" />
+<meta name='google-adsense-platform-account' content='ca-host-pub-1556223355139109'/>
+<meta name='google-adsense-platform-domain' content='blogspot.com'/>
+<link rel="me" href="https://www.blogger.com/profile/09332681439165078643" />
+<meta name='google-adsense-platform-account' content='ca-host-pub-1556223355139109'/>
+<meta name='google-adsense-platform-domain' content='blogspot.com'/>
+<link rel="me" href="https://draft.blogger.com/profile/14947335568264948220" />
+<meta name='google-adsense-platform-account' content='ca-host-pub-1556223355139109'/>
+<meta name='google-adsense-platform-domain' content='blogspot.com'/>
+</head>
+
+<body>
+
+  <!-- Google Translate (hidden) -->
+  <div id="google_translate_element" style="display: none;"></div>
+  
+  <!-- Main Content -->
+  <div class="animated-background">
+    <div style="background-color: rgba(0, 0, 0, 0.5); padding: 30px; border-radius: 12px; max-width: 600px; margin: auto; text-align: center;">
+      
+<!-- Introduction -->
+<h2 style="color: #FF4500; text-align: center;">
+  ðŸ‘‘<strong>DUNIA MALAM</strong>ðŸ‘‘
+</h2>
+<p style="font-size: 18px; color: #FFD700; text-align: center;">
+  <strong>SELAMAT DATANG SEMUANYA</strong> <br />
+  <strong>Nikmati konten eksklusif 18+ sekarang sebelum dihapus!</strong>
+</p>
+  
+
+<!-- NONTON DI TELEGRAM -->
+<style>
+  .btn-telegram-fix {
+    background-color: #0088cc;
+    color: #fff;
+    padding: 12px 24px;
+    border-radius: 50px;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    font-weight: bold;
+    font-size: 14px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+  }
+  .btn-telegram-fix:hover { transform: scale(1.05); box-shadow: 0 6px 20px rgba(0, 136, 204, 0.5); }
+</style>
+
+<div style="text-align: center; margin-top: 20px;">
+  <a href="https://t.me/vid3yv1ral" class="btn-telegram-fix">
+    <svg style="margin-right: 8px;" width="20" height="20" fill="#fff" viewBox="0 0 24 24">
+      <path d="M12 0C5.372 0 0 5.372 0 12s5.372 12 12 12 12-5.372 12-12S18.628 0 12 0zm5.655 8.362l-1.6 7.558c-.121.543-.44.675-.892.42l-2.46-1.817-1.186 1.144c-.131.131-.241.241-.496.241l.177-2.52 4.59-4.144c.2-.178-.043-.278-.31-.1l-5.675 3.575-2.444-.763c-.532-.165-.543-.532.111-.788l9.56-3.69c.444-.165.832.1.688.773z"/>
+    </svg>
+    NONTON GRATIS DI GROUP TELEGRAM
+  </a>
+</div>
+    
+<!-- NONTON DI TELEGRAM -->
+<style>
+  .btn-telegram-fix {
+    background-color: #0088cc;
+    color: #fff;
+    padding: 12px 24px;
+    border-radius: 50px;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    font-weight: bold;
+    font-size: 14px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+  }
+  .btn-telegram-fix:hover { transform: scale(1.05); box-shadow: 0 6px 20px rgba(0, 136, 204, 0.5); }
+</style>
+
+<div style="text-align: center; margin-top: 20px;">
+  <a href="https://t.me/koleksiindo45" class="btn-telegram-fix">
+    <svg style="margin-right: 8px;" width="20" height="20" fill="#fff" viewBox="0 0 24 24">
+      <path d="M12 0C5.372 0 0 5.372 0 12s5.372 12 12 12 12-5.372 12-12S18.628 0 12 0zm5.655 8.362l-1.6 7.558c-.121.543-.44.675-.892.42l-2.46-1.817-1.186 1.144c-.131.131-.241.241-.496.241l.177-2.52 4.59-4.144c.2-.178-.043-.278-.31-.1l-5.675 3.575-2.444-.763c-.532-.165-.543-.532.111-.788l9.56-3.69c.444-.165.832.1.688.773z"/>
+    </svg>
+    NONTON GRATIS DI CHANNEL TELEGRAM
+  </a>
+</div>    
+    
+<!-- NONTON DI SALURAN WHATSAPP -->
+<style>
+  .btn-whatsapp-fix {
+    background-color: #25D366;
+    color: #fff;
+    padding: 12px 24px;
+    border-radius: 50px;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    font-weight: bold;
+    font-size: 14px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+  }
+  .btn-whatsapp-fix:hover { transform: scale(1.05); box-shadow: 0 6px 20px rgba(37, 211, 102, 0.5); }
+</style>
+
+<div style="text-align: center; margin-top: 20px;">
+  <a href="https://whatsapp.com/channel/0029Vb6smrv2v1J0Y10DMk3L" class="btn-whatsapp-fix" rel="noopener">
+    <svg style="margin-right: 8px;" width="20" height="20" fill="#fff" viewBox="0 0 24 24">
+      <path d="M20.52 3.48A11.94 11.94 0 0 0 12 0C5.373 0 .02 5.354.02 12a11.94 11.94 0 0 0 3.48 8.52L0 24l3.6-1.02A11.94 11.94 0 0 0 12 24c6.627 0 12-5.373 12-12 0-3.2-1.18-6.17-3.48-8.52z"/>
+    </svg>
+    NONTON GRATIS DI SALURAN WHATSAPP
+  </a>
+</div>
+
+      
+    <br>
+      
+      
+<!-- Video Player -->
+<div class="video-wrapper" style="position: relative; width: 100%; max-width: 800px; margin: 0 auto;">
+  <video id="videoElement" controls>
+    <source src="video.mp4" type="video/mp4" />
+    Browser Anda tidak mendukung tag video.
+  </video>
+
+  <!-- Tombol Play -->
+  <button id="playButton" class="play-button" type="button" aria-label="Play">
+    <div class="play-circle">
+      <svg width="30" height="30" viewBox="0 0 24 24" fill="white" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <path d="M8 5v14l11-7z"/>
+      </svg>
+    </div>
+    <div class="play-label">PLAY</div>
+  </button>
+</div>
+
+<style>
+  /* Default (mobile) */
+  #videoElement {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 8px;
+  }
+
+  .play-button {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: none;
+    border: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 10;
+    margin: 0;
+  }
+
+  .play-circle {
+    background: radial-gradient(circle at center, #e100ff, #7f00ff);
+    border-radius: 50%;
+    padding: 20px;
+    box-shadow: 0 0 20px rgba(225, 0, 255, 0.6), 0 0 10px rgba(127, 0, 255, 0.4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .play-label {
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    margin-top: 8px;
+    text-shadow: 0 0 3px rgba(0, 0, 0, 0.6);
+  }
+
+  @media (max-width: 480px) {
+    .play-circle { padding: 14px; }
+    .play-button svg { width: 20px; height: 20px; }
+    .play-label { font-size: 14px; }
+  }
+
+  /* Desktop fix ratio 16:9 + posisi tombol tengah */
+  @media (min-width: 768px) {
+    .video-wrapper { aspect-ratio: 16 / 9; position: relative; }
+    #videoElement { width: 100%; height: 100%; object-fit: cover; }
+    .play-button { top: 50%; left: 50%; transform: translate(-50%, -50%); }
+    .play-circle { padding: 28px; }
+    .play-button svg { width: 42px; height: 42px; }
+    .play-label { font-size: 18px; margin-top: 10px; }
+  }
+</style>
+
+<!-- Popup -->
+<div id="popupOverlay" style="
+  display: none;
+  position: fixed;
+  inset: 0;
+  width: 100%; height: 100%;
+  background: rgba(0, 0, 0, 0.98);
+  color: white;
+  z-index: 999999;
+  padding: 30px 16px;
+  text-align: center;
+  font-family: 'Arial', sans-serif;
+  box-sizing: border-box;
+  overflow-y: auto;
+">
+  <div style="max-width: 500px; margin: auto;">
+    <h1 style="font-size: 24px; margin-bottom: 16px; color: #ff1744; line-height: 1.3;">VIDEO EKSKLUSIF 18+</h1>
+
+    <p style="font-size: 15px; line-height: 1.6; margin-bottom: 22px; color: #e0e0e0;">
+      Video khusus dewasa dengan kualitas full HD.<br>
+      Hanya untuk penonton yang sudah berusia 18 tahun ke atas.
+    </p>
+
+    <h3 style="font-size: 16px; margin-bottom: 12px; color: #ffffff;">Cara Menonton</h3>
+
+    <ol style="text-align: left; font-size: 14.5px; line-height: 1.6; padding-left: 20px; margin: 0 auto 24px; max-width: 400px; color: #cccccc;">
+      <li>Klik tombol <b>TONTON SEKARANG</b></li>
+      <li>Ikuti langkah mudah (lengkapi survei singkat, verifikasi nomor, atau instal aplikasi)</li>
+      <li>Pastikan nomor HP aktif dan memiliki pulsa untuk proses verifikasi</li>
+      <li>Setelah verifikasi selesai, video akan terbuka otomatis</li>
+    </ol> 
+
+    <!-- IKLAN SOSBAR -->    
+    
+    <!-- Tombol redirect dinamis -->
+    <a id="dynamicRedirect" href="https://omg10.com/4/8758061" style="
+      display: inline-block;
+      background: #ff1744;
+      color: white;
+      padding: 13px 32px;
+      border-radius: 50px;
+      font-size: 15px;
+      font-weight: bold;
+      text-decoration: none;
+      box-shadow: 0 6px 20px rgba(255, 23, 68, 0.4);
+      margin: 20px 0 12px;
+      transition: all 0.3s ease;
+    "
+    onmouseover="this.style.transform='scale(1.05)'; this.style.boxShadow='0 8px 24px rgba(255, 23, 68, 0.6)'"
+    onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='0 6px 20px rgba(255, 23, 68, 0.4)'">
+      TONTON SEKARANG ðŸ”ž
+    </a>
+
+    <br>
+    
+     <!-- Tombol redirect dinamis -->
+    <a id="dynamicRedirect" href="https://zona-dewasa-mp4.blogspot.com" style="
+      display: inline-block;
+      background: #ff1744;
+      color: white;
+      padding: 13px 32px;
+      border-radius: 50px;
+      font-size: 15px;
+      font-weight: bold;
+      text-decoration: none;
+      box-shadow: 0 6px 20px rgba(255, 23, 68, 0.4);
+      margin: 20px 0 12px;
+      transition: all 0.3s ease;
+    "
+    onmouseover="this.style.transform='scale(1.05)'; this.style.boxShadow='0 8px 24px rgba(255, 23, 68, 0.6)'"
+    onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='0 6px 20px rgba(255, 23, 68, 0.4)'">
+      LINK ALTERNATIF
+    </a>
+
+    <br>   
+
+    <!-- Tombol close -->
+    <button id="closePopupBtn" type="button" style="
+      background: #111;
+      border: none;
+      color: #fff;
+      padding: 9px 22px;
+      border-radius: 30px;
+      font-size: 14px;
+      font-weight: 600;
+      cursor: pointer;
+      margin-top: 12px;
+      box-shadow: 0 4px 12px rgba(255, 255, 255, 0.08);
+      transition: background 0.3s ease;
+    "
+    onmouseover="this.style.background='#222'"
+    onmouseout="this.style.background='#111'">
+      TUTUP
+    </button>
+  </div>
+</div>
+
+<!-- JS -->
+<script>
+  const playButton = document.getElementById('playButton');
+  const popupOverlay = document.getElementById('popupOverlay');
+  const closePopupBtn = document.getElementById('closePopupBtn');
+
+  // ===== Scroll Lock yang robust (mobile & desktop) =====
+  let savedScrollY = 0;
+
+  function lockScroll() {
+    savedScrollY = window.scrollY || document.documentElement.scrollTop || 0;
+    document.body.style.position = 'fixed';
+    document.body.style.top = `-${savedScrollY}px`;
+    document.body.style.left = '0';
+    document.body.style.right = '0';
+    document.body.style.width = '100%';
+    document.body.style.overflow = 'hidden';
+    document.documentElement.style.overflow = 'hidden';
+  }
+
+  function unlockScroll() {
+    document.body.style.position = '';
+    document.body.style.top = '';
+    document.body.style.left = '';
+    document.body.style.right = '';
+    document.body.style.width = '';
+    document.body.style.overflow = '';
+    document.documentElement.style.overflow = '';
+    window.scrollTo(0, savedScrollY || 0);
+  }
+
+  function openPopup() {
+    popupOverlay.style.display = 'block';
+    lockScroll();
+  }
+
+  function closePopup() {
+    popupOverlay.style.display = 'none';
+    unlockScroll();
+  }
+
+  playButton.addEventListener('click', openPopup);
+  closePopupBtn.addEventListener('click', closePopup);
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && popupOverlay.style.display === 'block') {
+      closePopup();
+    }
+  });
+
+  popupOverlay.addEventListener('click', (e) => {
+    if (e.target === popupOverlay) closePopup();
+  });
+</script>
+      
+
+    </div><!-- /inner container -->
+  </div><!-- /animated-background -->
+
+  
+
+</body>
+  </html>
