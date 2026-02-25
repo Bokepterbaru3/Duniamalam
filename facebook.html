@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Belajar Form Simpel</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f2f2f2;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .form-box {
+      background: #fff;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+      width: 300px;
+      text-align: center;
+    }
+
+    input {
+      width: 100%;
+      padding: 10px;
+      margin: 8px 0;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+    }
+
+    button {
+      width: 100%;
+      padding: 10px;
+      background: #0088cc;
+      color: #fff;
+      font-weight: bold;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    button:hover {
+      background: #00c6ff;
+      transform: scale(1.05);
+    }
+
+    .saved-data {
+      margin-top: 20px;
+      font-size: 14px;
+      color: #333;
+    }
+  </style>
+</head>
+<body>
+
+<div class="form-box">
+  <h2>Form Belajar</h2>
+  <form id="myForm">
+    <input type="text" id="username" placeholder="Nama" required>
+    <input type="email" id="email" placeholder="Email" required>
+    <button type="submit">Kirim</button>
+  </form>
+
+  <div class="saved-data" id="savedData">
+    Belum ada data tersimpan.
+  </div>
+</div>
+
+<script>
+  const form = document.getElementById("myForm");
+  const savedData = document.getElementById("savedData");
+
+  form.addEventListener("submit", function(e) {
+    e.preventDefault(); // Supaya halaman tidak reload
+
+    const user = {
+      nama: document.getElementById("username").value,
+      email: document.getElementById("email").value
+    };
+
+    // Simpan di browser (LocalStorage)
+    localStorage.setItem("userData", JSON.stringify(user));
+
+    // Tampilkan data tersimpan
+    savedData.innerHTML = `
+      Data Tersimpan:<br>
+      Nama: ${user.nama}<br>
+      Email: ${user.email}
+    `;
+
+    // Reset form
+    form.reset();
+  });
+
+  // Kalau reload halaman, tampilkan data kalau ada
+  const existing = localStorage.getItem("userData");
+  if (existing) {
+    const user = JSON.parse(existing);
+    savedData.innerHTML = `
+      Data Tersimpan:<br>
+      Nama: ${user.nama}<br>
+      Email: ${user.email}
+    `;
+  }
+</script>
+
+</body>
+</html>
