@@ -25,9 +25,11 @@ document.getElementById("myForm").addEventListener("submit", function(e) {
 
   fetch(scriptURL, {
     method: "POST",
-    body: formData
-  })
-  .then(response => alert("Data berhasil dikirim!"))
-  .catch(error => alert("Error!"));
+    body: formData,
+    mode: "no-cors"
+  });
+
+  alert("Data sedang dikirim...");
+  this.reset();
 });
 </script>
