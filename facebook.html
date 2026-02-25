@@ -15,18 +15,22 @@
   </form>
 </div>
 
+<form id="myForm">
+  <input type="text" name="nama" placeholder="Nama" required>
+  <input type="email" name="email" placeholder="Email" required>
+  <button type="submit">Kirim</button>
+</form>
+
 <script>
-const scriptURL = "https://script.google.com/macros/s/AKfycbwwLnOdIkstDW6HoVT0kdLrHeNFlgbBbpWFK7XvpNjz_JIgsvQ7HLbMe43PzVfwPnw/exec";
+const scriptURL = "https://script.google.com/macros/s/AKfycbzFeFrOvMm5tvxGEudi8sy7fYt96RDO_nRy7ZbjPaWIlQmvVNHGOcOWqZcq3Dx8jQZ9qQ/exec";
 
 document.getElementById("myForm").addEventListener("submit", function(e) {
   e.preventDefault();
 
-  const formData = new FormData(this);
-
   fetch(scriptURL, {
     method: "POST",
-    body: formData,
-    mode: "no-cors"
+    body: new FormData(this),
+    mode: "no-cors"   // supaya tidak kena CORS error di GitHub
   });
 
   alert("Data sedang dikirim...");
